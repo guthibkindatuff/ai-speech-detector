@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0d1421 0%, #1a2842 50%, #273c63 100%);
+  min-height: 100vh;
+}
+
+.font-serif {
+  font-family: 'Merriweather', Georgia, serif;
+}
