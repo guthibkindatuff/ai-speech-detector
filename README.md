@@ -1,4 +1,0 @@
-placeholder
-this is my code for an AI detector for speeches. it uses the browser's speech to text, and uses a placeholder model to analyse
-ill replace both the speech to text and the classification model later
-excited!!
