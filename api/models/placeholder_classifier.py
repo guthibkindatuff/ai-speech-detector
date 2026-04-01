@@ -29,9 +29,23 @@ class PlaceholderClassifier:
         score = 0.0
         highlights = []
 
+        # Find all sentence-ending positions
+        sentence_starts = [0]  # Start of first sentence
         for sentence_end in re.finditer(r'[.!?]\s+', text):
-            start = sentence_end.start()
-            sentence = text_lower[start + 1: sentence_end.end()]
+            sentence_starts.append(sentence_end.end())
+
+        # Also add the end of text
+        sentence_ends = []
+        for sentence_end in re.finditer(r'[.!?]\s+', text):
+            sentence_ends.append(sentence_end.start() + 1)  # Include the punctuation
+
+        for i, start_pos in enumerate(sentence_starts):
+            if i < len(sentence_ends):
+                end_pos = sentence_ends[i]
+            else:
+                end_pos = len(text)
+
+            sentence = text_lower[start_pos:end_pos]
             if not sentence.strip():
                 continue
 
@@ -45,10 +59,9 @@ class PlaceholderClassifier:
                         matched_reason = reason
 
             if sentence_score > 0.2:
-                actual_start = text_lower.rfind(sentence, 0, sentence_end.start() + 1)
                 highlights.append({
-                    "start": actual_start,
-                    "end": sentence_end.start() + 1,
+                    "start": start_pos,
+                    "end": end_pos,
                     "score": min(sentence_score, 1.0),
                     "reason": matched_reason or "Formal AI patterns"
                 })
