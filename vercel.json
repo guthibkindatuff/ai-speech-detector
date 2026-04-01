@@ -1,12 +1,5 @@
 {
   "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "public",
-  "installCommand": "cd frontend && npm install",
-  "framework": "vite",
-  "routes": [
-    { "src": "/api/analyze", "methods": ["POST"], "dest": "/api/analyze" },
-    { "src": "/api/health", "dest": "/api/health" },
-    { "src": "/health", "dest": "/api/health" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ]
+  "outputDirectory": "frontend/public",
+  "framework": "vite"
 }
