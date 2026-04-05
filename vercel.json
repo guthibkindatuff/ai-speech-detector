@@ -4,7 +4,11 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/analyze",
+      "destination": "api/app.py"
+    },
+    {
+      "source": "/api/health",
       "destination": "api/app.py"
     }
   ]
