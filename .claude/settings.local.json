@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(claude mcp:*)",
+      "Bash(npx vercel:*)",
+      "Bash(vercel:*)",
+      "Bash(git push:*)",
+      "Bash(head -5 frontend/dist/assets/*.js)",
+      "Bash(grep -o 'api/analyze' frontend/dist/assets/*.js)",
+      "Bash(git mv:*)",
+      "WebSearch",
+      "WebFetch(domain:www.vercel.com)",
+      "WebFetch(domain:aidetector.vercel.app)"
+    ]
+  }
+}
