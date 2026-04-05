@@ -12,7 +12,8 @@
       "Bash(git mv:*)",
       "WebSearch",
       "WebFetch(domain:www.vercel.com)",
-      "WebFetch(domain:aidetector.vercel.app)"
+      "WebFetch(domain:aidetector.vercel.app)",
+      "WebFetch(domain:aispeechchecker.vercel.app)"
     ]
   }
 }

@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
-from models.placeholder_classifier import PlaceholderClassifier
+from placeholder_classifier import PlaceholderClassifier
 import os
 
 app = FastAPI(title="AI Speech Detector API")
